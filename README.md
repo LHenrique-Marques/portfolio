@@ -1,54 +1,29 @@
-# React + TypeScript + Vite
+## 💚 Portfolio Tutorial 2023
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a tutorial series for my [YouTube channel](https://www.youtube.com/@GBDev) where I teach viewers how to create a modern and professional portfolio using the latest web development tools and technologies. In this series, we will be using Next.js 13, Tailwind CSS, Hygraph CMS, TypeScript, and Framer Motion to build a complete and functional portfolio website from scratch.
 
-Currently, two official plugins are available:
+## 🖥 Project Images
+<img src="https://github.com/GBDev13/portfolio-tutorial-2023/assets/71772559/341fef7a-536d-4b4e-b124-9b99be313575" align="center" />
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+&nbsp;
 
-## Expanding the ESLint configuration
+More images [here](https://www.gbdev.me/projects/portfolio-tutorial-2023)
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+&nbsp;
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## ⚙️ Technologies
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+* Next.js 13
+* TypeScript
+* Tailwind
+* Framer Motion
+* Hygraph CMS
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+&nbsp;
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+### 🔗 Project live
+* [Portfolio Tutorial 2023](https://portfolio-tutorial-2023.vercel.app/)
+
+&nbsp;
+
+<p align="center">Developed with 💙 by GBDev</p>
