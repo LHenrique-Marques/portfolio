@@ -1,21 +1,21 @@
-interface Props {
+interface ProjectCardProps {
   title: string;
   description: string;
-  link: string;
+  tags: string[];
 }
 
-export default function ProjectCard({ title, description, link }: Props) {
+export default function ProjectCard({ title, description, tags }: ProjectCardProps) {
   return (
-    <div className="bg-white rounded-xl shadow-md p-6 text-left hover:shadow-lg transition">
-      <h3 className="text-xl font-semibold text-gray-900 mb-2">{title}</h3>
-      <p className="text-gray-700 mb-4">{description}</p>
-      <a
-        href={link}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-600 hover:text-blue-800 font-medium"
-      >
-        Ver no GitHub →
+    <div className="bg-[#1e293b] p-6 rounded-xl text-white shadow-md hover:scale-105 transition-transform">
+      <h3 className="text-xl font-bold mb-2">{title}</h3>
+      <p className="text-gray-300 mb-4">{description}</p>
+      <div className="flex flex-wrap gap-2">
+        {tags.map((tag, idx) => (
+          <span key={idx} className="bg-green-800 text-sm px-3 py-1 rounded-full text-white">{tag}</span>
+        ))}
+      </div>
+      <a href="#" className="text-green-400 inline-block mt-4 hover:underline">
+        Ver projeto →
       </a>
     </div>
   );

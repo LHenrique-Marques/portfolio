@@ -1,33 +1,22 @@
 export default function Navbar() {
   return (
-    <header className="fixed top-0 left-0 w-full bg-white shadow z-50">
-      <nav className="max-w-6xl mx-auto px-6 py-3 flex items-center justify-between">
-        <span className="text-xl font-semibold text-gray-800 tracking-tight">
-          Henrique.dev
-        </span>
-        <ul className="flex gap-6 text-sm text-gray-600 font-medium">
+    <nav className="w-full fixed top-0 left-0 bg-dark z-50 py-6">
+      <div className="max-w-6xl mx-auto px-6 flex justify-end">
+        <ul className="flex gap-12 items-center">
           <li>
-            <a href="#about" className="hover:text-blue-600 transition-colors">
-              Sobre
+            <a href="#about" className="inline-flex items-center gap-12 text-green-400 hover:underline">
+              <span>#</span>
+              <span className="text-gray-300">Home</span>
             </a>
           </li>
           <li>
-            <a href="#projects" className="hover:text-blue-600 transition-colors">
-              Projetos
-            </a>
-          </li>
-          <li>
-            <a href="#skills" className="hover:text-blue-600 transition-colors">
-              Habilidades
-            </a>
-          </li>
-          <li>
-            <a href="#contact" className="hover:text-blue-600 transition-colors">
-              Contato
+            <a href="#projects" className="inline-flex items-center gap-12 text-green-400 hover:underline">
+              <span>#</span>
+              <span className="text-white font-semibold">Projetos</span>
             </a>
           </li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </nav>
   );
 }
