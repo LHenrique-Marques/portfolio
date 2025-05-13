@@ -1,12 +1,12 @@
-import { HeroSection } from './components/pages/home/hero-section'
-import { HighlightedProjects } from './components/pages/home/highlighted-projects'
-import { KnownTechs } from './components/pages/home/known-techs'
-import { HomeOnlyData } from './types/page-info'
-import { fetchHygraphQuery } from './utils/fetch-hygraph-query'
+import { HeroSection } from "./components/pages/home/hero-section";
+import { HighlightedProjects } from "./components/pages/home/highlighted-projects";
+import { KnownTechs } from "./components/pages/home/known-techs";
+import { HomeOnlyData } from "./types/page-info";
+import { fetchHygraphQuery } from "./utils/fetch-hygraph-query";
 
 export const metadata = {
-  title: 'Home',
-}
+  title: "Home",
+};
 
 const getPageData = async (): Promise<HomeOnlyData> => {
   const query = `
@@ -39,22 +39,27 @@ const getPageData = async (): Promise<HomeOnlyData> => {
         }
       }
     }
-  `
+  `;
 
   return fetchHygraphQuery(
     query,
-    1000 * 60 * 60 * 24, // 1 dia
-  )
-}
+    1000 * 60 * 60 * 24 // 1 dia
+  );
+};
 
 export default async function Home() {
-  const data = await getPageData()
+  const data = await getPageData();
 
   if (!data || !data.page) {
-    return <p>Erro ao carregar dados. Verifique o slug &quot;home&quot; e se os campos foram publicados.</p>
+    return (
+      <p>
+        Erro ao carregar dados. Verifique o slug &quot;home&quot; e se os campos
+        foram publicados.
+      </p>
+    );
   }
 
-  const { page: pageData } = data
+  const { page: pageData } = data;
 
   return (
     <>
@@ -62,5 +67,5 @@ export default async function Home() {
       <KnownTechs techs={pageData.knownTechs} />
       <HighlightedProjects projects={pageData.highlightProjects} />
     </>
-  )
+  );
 }

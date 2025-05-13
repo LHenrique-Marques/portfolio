@@ -1,10 +1,10 @@
-import { SectionTitle } from '@/app/components/section-title'
-import { ExperienceItem } from './experience-item'
-import { WorkExperience as IWorkExperience } from '@/app/types/work-experience'
+import { SectionTitle } from "@/app/components/section-title";
+import { ExperienceItem } from "./experience-item";
+import { WorkExperience as IWorkExperience } from "@/app/types/work-experience";
 
 type WorkExperienceProps = {
-  experiences: IWorkExperience[]
-}
+  experiences: IWorkExperience[];
+};
 
 export const WorkExperience = ({ experiences }: WorkExperienceProps) => {
   return (
@@ -29,5 +29,5 @@ export const WorkExperience = ({ experiences }: WorkExperienceProps) => {
         ))}
       </div>
     </section>
-  )
-}
+  );
+};

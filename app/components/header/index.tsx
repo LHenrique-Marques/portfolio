@@ -1,20 +1,20 @@
-'use client'
+"use client";
 
-import Image from 'next/image'
-import { NavItem } from './nav-item'
-import Link from 'next/link'
-import { motion } from 'framer-motion'
+import Image from "next/image";
+import { NavItem } from "./nav-item";
+import Link from "next/link";
+import { motion } from "framer-motion";
 
 const NAV_ITEMS = [
   {
-    label: 'Home',
-    href: '/',
+    label: "Home",
+    href: "/",
   },
   {
-    label: 'Projetos',
-    href: '/projects',
+    label: "Projetos",
+    href: "/projects",
   },
-]
+];
 
 export const Header = () => {
   return (
@@ -41,5 +41,5 @@ export const Header = () => {
         </nav>
       </div>
     </motion.header>
-  )
-}
+  );
+};
