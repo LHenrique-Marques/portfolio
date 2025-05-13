@@ -51,7 +51,7 @@ export default async function Home() {
   const data = await getPageData()
 
   if (!data || !data.page) {
-    return <p>Erro ao carregar dados. Verifique o slug "home" e se os campos foram publicados.</p>
+    return <p>Erro ao carregar dados. Verifique o slug &quot;home&quot; e se os campos foram publicados.</p>
   }
 
   const { page: pageData } = data
