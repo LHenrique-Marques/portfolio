@@ -4,36 +4,38 @@ import SectionTitle from "./components/SectionTitle";
 import Projects from "./sections/Projects";
 import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
+import About from "./sections/About";
 
-function App() {
+export default function App() {
   return (
-    <>
+    <div className="bg-white text-gray-900 font-sans">
       <Navbar />
-      <Hero />
 
-      <section id="about" className="p-8 max-w-4xl mx-auto">
-        <SectionTitle>Sobre mim</SectionTitle>
-        <p className="text-gray-700 text-lg">
-          Sou um desenvolvedor com foco em back-end e front-end, com experiência em projetos como o RightChoiceAI usando React, NestJS e FastAPI.
-        </p>
-      </section>
+      <main className="max-w-5xl mx-auto px-6">
+        <section className="pt-28 pb-20 border-b border-gray-200">
+          <Hero />
+        </section>
 
-      <section id="projects" className="p-8 max-w-6xl mx-auto">
-        <SectionTitle>Projetos</SectionTitle>
-        <Projects />
-      </section>
+        <section id="about" className="py-20 border-b border-gray-200">
+          <SectionTitle>Sobre mim</SectionTitle>
+          <About />
+        </section>
 
-      <section id="skills" className="p-8 max-w-6xl mx-auto">
-        <SectionTitle>Habilidades</SectionTitle>
-        <Skills />
-      </section>
+        <section id="projects" className="py-20 border-b border-gray-200">
+          <SectionTitle>Projetos</SectionTitle>
+          <Projects />
+        </section>
 
-      <section id="contact" className="p-8 max-w-4xl mx-auto">
-        <SectionTitle>Contato</SectionTitle>
-        <Contact />
-      </section>
-    </>
+        <section id="skills" className="py-20 border-b border-gray-200">
+          <SectionTitle>Habilidades</SectionTitle>
+          <Skills />
+        </section>
+
+        <section id="contact" className="py-20">
+          <SectionTitle>Contato</SectionTitle>
+          <Contact />
+        </section>
+      </main>
+    </div>
   );
 }
-
-export default App;
