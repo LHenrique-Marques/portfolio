@@ -1,5 +1,9 @@
 import SkillBadge from "../components/SkillBadge";
 export default function Skills() {
-    <SkillBadge name="Python" />;
-    <SkillBadge name="TypeScript" />;
+  return (
+    <div className="flex gap-4 flex-wrap">
+      <SkillBadge name="Python" />
+      <SkillBadge name="TypeScript" />
+    </div>
+  );
 }

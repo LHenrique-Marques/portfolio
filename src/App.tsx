@@ -7,11 +7,11 @@ import Contact from "./sections/Contact";
 export default function App() {
   return (
     <div className="bg-white text-gray-900 font-sans">
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Contact />
+      <Hero/>
+      <About/>
+      <Projects/>
+      <Skills/>
+      <Contact/>
     </div>
   );
 }
