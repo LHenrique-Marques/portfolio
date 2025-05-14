@@ -34,7 +34,7 @@ export type Project = {
   }
   thumbnail: { url: string }
   pageThumbnail: { url: string }
-  technologies: { name: string }[]
+  technologies: string[]
   githubUrl?: string
   liveProjectUrl?: string
   section: ProjectSection[]

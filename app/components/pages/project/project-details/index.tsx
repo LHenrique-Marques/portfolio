@@ -45,8 +45,8 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
       <div className="w-full max-w-[330px] flex flex-wrap gap-2 items-center justify-center">
         {project.technologies.map((tech, i) => (
           <TechBadge
-            name={tech.name}
-            key={`${tech.name}-${i}`}
+            name={tech}
+            key={`${tech}-${i}`}
             {...techBadgeAnimation}
             transition={{ duration: 0.3, delay: i * 0.1 }}
           />
