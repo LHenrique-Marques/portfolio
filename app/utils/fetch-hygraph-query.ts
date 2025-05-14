@@ -24,7 +24,8 @@ export const fetchHygraphQuery = async <T>(
   const json = await response.json()
   if (!json || !json.data) {
     console.error('❌ Erro ao buscar dados da Hygraph:', json.errors || json)
-    throw new Error('Erro na resposta da API Hygraph')
+  if (json?.errors) console.log(JSON.stringify(json.errors, null, 2))
+  throw new Error('Erro na resposta da API Hygraph')
   }
 
   return json.data

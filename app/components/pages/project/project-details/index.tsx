@@ -46,7 +46,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         {project.technologies.map((tech, i) => (
           <TechBadge
             name={tech.name}
-            key={tech.name}
+            key={`${tech.name}-${i}`}
             {...techBadgeAnimation}
             transition={{ duration: 0.3, delay: i * 0.1 }}
           />

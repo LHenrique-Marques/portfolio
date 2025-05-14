@@ -2,7 +2,7 @@
 
 import Image from 'next/image'
 import { motion } from 'framer-motion'
-import { ProjectSection } from '@/app/types/projects'
+import { ProjectSection } from '@/app/types/page-info'
 import { fadeUpAnimation } from '@/app/lib/animations'
 
 type ProjectSectionsProps = {

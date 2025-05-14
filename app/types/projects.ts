@@ -1,4 +1,5 @@
 import type { RichTextContent } from '@graphcms/rich-text-types'
+import { ProjectSection } from './page-info'
 
 export type HighlightedProject = {
   slug: string
@@ -23,13 +24,6 @@ export type Technology = {
   name: string
 }
 
-export type ProjectSection = {
-  title: string
-  image: {
-    url: string
-  }
-}
-
 export type Project = {
   slug: string
   title: string
@@ -43,5 +37,5 @@ export type Project = {
   technologies: { name: string }[]
   githubUrl?: string
   liveProjectUrl?: string
-  sections: ProjectSection[]
+  section: ProjectSection[]
 }

@@ -10,7 +10,13 @@ export type ProjectsPageStaticData = {
   }
   projects: Project[]
 }
-
+export type ProjectSection = {
+  __typename: 'Section'
+  title: string
+  image?: {
+    url: string
+  }
+}
 export type HomePageInfo = {
   introduction: {
     raw: RichTextContent

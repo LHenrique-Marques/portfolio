@@ -13,32 +13,29 @@ type ProjectProps = {
 
 const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   const query = `
-    query ProjectQuery($slug: String!) {
-      project(where: {slug: $slug}) {
-        pageThumbnail {
-          url
-        }
-        thumbnail {
-          url
-        }
-        sections {
+  query ProjectQuery($slug: String!) {
+    project(where: {slug: $slug}) {
+      pageThumbnail { url }
+      thumbnail { url }
+      section {
+        __typename
+        ... on Section {
           title
-          image {
-            url
-          }
+          image { url }
         }
-        title
-        shortDescription
-        description {
-          raw
-          text
-        }
-        technologies
-        liveProjectUrl
-        githubUrl
       }
+      title
+      shortDescription
+      description {
+        raw
+        text
+      }
+      technologies
+      liveProjectUrl
+      githubUrl
     }
-  `
+  }
+`
   const data = await fetchHygraphQuery<ProjectPageData>(
     query,
     { slug },
@@ -56,9 +53,9 @@ export default async function Project({ params: { slug } }: ProjectProps) {
   return (
     <>
       <ProjectDetails project={project} />
-      {Array.isArray(project.sections) && (
-        <ProjectSections sections={project.sections} />
-      )}
+      {Array.isArray(project.section) && (
+        <ProjectSections sections={project.section} />
+        )}
     </>
   )
 }
