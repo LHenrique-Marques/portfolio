@@ -1,26 +1,27 @@
-"use client";
+'use client'
 
-import { Button } from "@/app/components/button";
-import { TechBadge } from "@/app/components/tech-badge";
-import Image from "next/image";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { HomePageInfo } from "@/app/types/page-info";
-import { CMSIcon } from "@/app/components/cms-icon";
-import { RichText } from "@/app/components/rich-text";
-import { techBadgeAnimation } from "@/app/lib/animations";
+import { Button } from '@/app/components/button'
+import { TechBadge } from '@/app/components/tech-badge'
+import Image from 'next/image'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { motion } from 'framer-motion'
+import { HomePageInfo } from '@/app/types/page-info'
+import { CMSIcon } from '@/app/components/cms-icon'
+import { RichText } from '@/app/components/rich-text'
+import { techBadgeAnimation } from '@/app/lib/animations'
 
 type HeroSectionProps = {
-  homeInfo: HomePageInfo;
-};
+  homeInfo: HomePageInfo
+}
 
 export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
   const handleContact = () => {
-    const contactSection = document.querySelector("#contact");
+    const contactSection = document.querySelector('#contact')
     if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
+      contactSection.scrollIntoView({ behavior: 'smooth' })
     }
-  };
+  }
+
   return (
     <section className="w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
       <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
@@ -41,7 +42,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
             {homeInfo.technologies.map((tech, i) => (
               <TechBadge
-                name={tech} // ← agora é direto a string
+                name={tech}
                 key={tech}
                 {...techBadgeAnimation}
                 transition={{ duration: 0.2, delay: i * 0.1 }}
@@ -56,10 +57,10 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
             </Button>
 
             <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
-              {homeInfo.socials.map((contact, i) => (
+              {homeInfo.socials.map((contact) => (
                 <a
                   href={contact.url}
-                  key={`contact-${i}`}
+                  key={contact.url}
                   target="_blank"
                   className="hover:text-gray-100 transition-colors"
                   rel="noreferrer"
@@ -88,5 +89,5 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
         </motion.div>
       </div>
     </section>
-  );
-};
+  )
+}

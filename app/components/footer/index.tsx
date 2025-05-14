@@ -5,5 +5,5 @@ export const Footer = () => {
         Made by<strong className="font-medium">Henrique Marques</strong>
       </span>
     </footer>
-  );
-};
+  )
+}
