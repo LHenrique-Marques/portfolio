@@ -56,11 +56,12 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
                   href={contact.url ?? 'https://http.cat/404'}
                   target="_blank"
                   rel="noreferrer"
-                  className="w-6 h-6 border border-white flex items-center justify-center hover:text-white transition-colors"
+                  className="w-6 h-6 flex items-center justify-center hover:text-white transition-colors"
                   aria-label={`Link para ${contact.url}`}
                 >
                   {contact.iconSvg ? (
                     <span
+                      className="w-6 h-6 text-white inline-block"
                       dangerouslySetInnerHTML={{ __html: contact.iconSvg }}
                     />
                   ) : (
