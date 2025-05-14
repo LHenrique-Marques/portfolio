@@ -22,7 +22,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
       <motion.div
         className="absolute inset-0 z-[-1]"
         style={{
-          background: `url(/images/hero-bg.png) no-repeat center/cover, url(${project.pageThumbnail.url}) no-repeat center/cover`,
+          background: `url(/images/hero-bg.png) no-repeat center/cover, url(${project.pageThumbnail?.url ?? 'https://http.cat/404'}) no-repeat center/cover`,
         }}
         initial={{ opacity: 0, scale: 1.3 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -38,7 +38,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         className="text-gray-400 text-center max-w-[640px] my-4 sm:my-6 text-sm sm:text-base"
         {...fadeUpAnimation}
       >
-        <RichText content={project.description.raw} />
+        <RichText content={project.description?.raw ?? {}} />
       </motion.div>
       <div className="w-full max-w-[330px] flex flex-wrap gap-2 items-center justify-center">
         {project.technologies.map((tech, i) => (

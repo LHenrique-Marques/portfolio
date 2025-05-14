@@ -32,7 +32,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
           <p className="font-mono text-emerald-400">Olá, meu nome é</p>
           <h2 className="text-4xl font-medium mt-2">Luis Henrique Marques</h2>
           <div className="text-gray-400 my-6 text-sm sm:text-base">
-            <RichText content={homeInfo.introduction.raw} />
+            <RichText content={homeInfo.introduction?.raw ?? {}} />
           </div>
           <div className="flex flex-wrap gap-x-2 gap-y-3 lg:max-w-[340px]">
             {homeInfo.technologies.map((tech, i) => (
@@ -52,7 +52,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
             <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
               {homeInfo.socials.map((contact, i) => (
                 <a
-                  href={contact.url}
+                  href={contact?.url ?? 'https://http.cat/404'}
                   key={`contact-${i}`}
                   target="_blank"
                   className="hover:text-gray-100 transition-colors"
@@ -75,7 +75,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
             className="w-[300px] h-[300px] lg:w-[420px] lg:h-[404px] mb-6 lg:mb-0 shadow-2xl rounded-lg object-cover"
             width={420}
             height={404}
-            src={homeInfo.profilePicture.url}
+            src={homeInfo.profilePicture?.url ?? 'https://http.cat/404'}
             alt="Foto de perfil do Henrique Marques"
           />
         </motion.div>

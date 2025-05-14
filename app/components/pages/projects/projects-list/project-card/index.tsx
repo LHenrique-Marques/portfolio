@@ -15,7 +15,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
           height={200}
           className="w-full h-full object-cover group-hover:scale-110 duration-500 transition-all"
           alt={`Thumbnail do projeto ${project.title}`}
-          src={project.thumbnail.url}
+          src={project.thumbnail?.url ?? 'https://http.cat/404'}
           unoptimized
         />
       </div>

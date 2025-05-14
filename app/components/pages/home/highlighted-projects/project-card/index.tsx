@@ -29,7 +29,7 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         transition={{ duration: 0.3, delay: 0.3 }}
       >
         <Image
-          src={project.thumbnail.url}
+          src={project.thumbnail?.url ?? 'https://http.cat/404'}
           width={420}
           height={304}
           alt={`Thumbnail do projeto ${project.title}`}

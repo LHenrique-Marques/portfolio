@@ -86,11 +86,11 @@ export async function generateMetadata({
 
   return {
     title: project.title,
-    description: project.description.text,
+    description: project.description?.text ?? '',
     openGraph: {
       images: [
         {
-          url: project.thumbnail.url,
+          url: project.thumbnail?.url ?? 'https://http.cat/404',
           width: 1200,
           height: 630,
         },

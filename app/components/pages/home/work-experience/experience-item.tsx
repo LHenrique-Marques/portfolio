@@ -55,7 +55,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
       <div className="flex items-center flex-col gap-4">
         <div className="rounded-full border border-gray-500 p-0.5">
           <Image
-            src={companyLogo.url}
+            src={companyLogo?.url ?? 'https://http.cat/404'}
             width={40}
             height={40}
             className="rounded-full"
@@ -81,7 +81,7 @@ export const ExperienceItem = ({ experience }: ExperienceItemProps) => {
             {formattedStartDate} • {formattedEndDate} • ({formattedDuration})
           </span>
           <div className="text-gray-400">
-            <RichText content={description.raw} />
+            <RichText content={description?.raw ?? {}} />
           </div>
         </div>
 

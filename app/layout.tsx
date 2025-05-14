@@ -8,6 +8,7 @@ import { Toaster } from './components/toaster'
 import { BackToTop } from './components/back-to-top'
 
 export const metadata = {
+  metadataBase: new URL('https://portfolio-npfwgzlr4-lhenrique-marques-projects.vercel.app'),
   title: {
     default: 'Home',
     template: '%s | GB Dev',
