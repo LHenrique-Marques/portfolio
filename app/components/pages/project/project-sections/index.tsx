@@ -1,13 +1,13 @@
-"use client";
+'use client'
 
-import Image from "next/image";
-import { motion } from "framer-motion";
-import { ProjectSection } from "@/app/types/projects";
-import { fadeUpAnimation } from "@/app/lib/animations";
+import Image from 'next/image'
+import { motion } from 'framer-motion'
+import { ProjectSection } from '@/app/types/projects'
+import { fadeUpAnimation } from '@/app/lib/animations'
 
 type ProjectSectionsProps = {
-  sections: ProjectSection[];
-};
+  sections: ProjectSection[]
+}
 
 export const ProjectSections = ({ sections }: ProjectSectionsProps) => {
   return (
@@ -33,5 +33,5 @@ export const ProjectSections = ({ sections }: ProjectSectionsProps) => {
         </motion.div>
       ))}
     </section>
-  );
-};
+  )
+}

@@ -1,7 +1,7 @@
-import { RichText as CMSRichText } from "@graphcms/rich-text-react-renderer";
-import { ComponentProps } from "react";
+import { RichText as CMSRichText } from '@graphcms/rich-text-react-renderer'
+import { ComponentProps } from 'react'
 
-type RichTextProps = ComponentProps<typeof CMSRichText>;
+type RichTextProps = ComponentProps<typeof CMSRichText>
 
 export const RichText = ({ ...props }: RichTextProps) => {
   return (
@@ -26,5 +26,5 @@ export const RichText = ({ ...props }: RichTextProps) => {
         ),
       }}
     />
-  );
-};
+  )
+}

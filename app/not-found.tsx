@@ -1,6 +1,6 @@
-import Link from "next/link";
-import { Button } from "./components/button";
-import { HiArrowNarrowLeft } from "react-icons/hi";
+import Link from 'next/link'
+import { Button } from './components/button'
+import { HiArrowNarrowLeft } from 'react-icons/hi'
 
 export default function NotFound() {
   return (
@@ -16,5 +16,5 @@ export default function NotFound() {
         </Button>
       </Link>
     </div>
-  );
+  )
 }

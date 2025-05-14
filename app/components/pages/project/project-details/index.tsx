@@ -1,19 +1,20 @@
-"use client";
+'use client'
 
-import { Button } from "@/app/components/button";
-import { Link } from "@/app/components/link";
-import { SectionTitle } from "@/app/components/section-title";
-import { TechBadge } from "@/app/components/tech-badge";
-import { HiArrowNarrowLeft } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { Project } from "@/app/types/projects";
-import { TbBrandGithub } from "react-icons/tb";
-import { FiGlobe } from "react-icons/fi";
-import { fadeUpAnimation, techBadgeAnimation } from "@/app/lib/animations";
+import { Button } from '@/app/components/button'
+import { Link } from '@/app/components/link'
+import { SectionTitle } from '@/app/components/section-title'
+import { TechBadge } from '@/app/components/tech-badge'
+import { HiArrowNarrowLeft } from 'react-icons/hi'
+import { motion } from 'framer-motion'
+import { Project } from '@/app/types/projects'
+import { RichText } from '@/app/components/rich-text'
+import { TbBrandGithub } from 'react-icons/tb'
+import { FiGlobe } from 'react-icons/fi'
+import { fadeUpAnimation, techBadgeAnimation } from '@/app/lib/animations'
 
 type ProjectDetailsProps = {
-  project: Project;
-};
+  project: Project
+}
 
 export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
   return (
@@ -21,7 +22,7 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
       <motion.div
         className="absolute inset-0 z-[-1]"
         style={{
-          background: `url(/images/hero-bg.png) no-repeat center/cover, url(${project.thumbnail.url}) no-repeat center/cover`,
+          background: `url(/images/hero-bg.png) no-repeat center/cover, url(${project.pageThumbnail.url}) no-repeat center/cover`,
         }}
         initial={{ opacity: 0, scale: 1.3 }}
         animate={{ opacity: 1, scale: 1 }}
@@ -37,12 +38,13 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         className="text-gray-400 text-center max-w-[640px] my-4 sm:my-6 text-sm sm:text-base"
         {...fadeUpAnimation}
       >
+        <RichText content={project.description.raw} />
       </motion.div>
       <div className="w-full max-w-[330px] flex flex-wrap gap-2 items-center justify-center">
         {project.technologies.map((tech, i) => (
           <TechBadge
-            name={tech}
-            key={tech}
+            name={tech.name}
+            key={tech.name}
             {...techBadgeAnimation}
             transition={{ duration: 0.3, delay: i * 0.1 }}
           />
@@ -74,5 +76,5 @@ export const ProjectDetails = ({ project }: ProjectDetailsProps) => {
         Voltar para projetos
       </Link>
     </section>
-  );
-};
+  )
+}

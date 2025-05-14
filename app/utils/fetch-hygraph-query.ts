@@ -1,13 +1,9 @@
 export const fetchHygraphQuery = async <T>(
   query: string,
-  revalidate?: number
+  revalidate?: number,
 ): Promise<T> => {
-  console.log('HYGRAPH_URL:', process.env.HYGRAPH_URL)
-  console.log(
-    'HYGRAPH_TOKEN:',
-    process.env.HYGRAPH_TOKEN?.slice(0, 10) + '...'
-  )
-
+  console.log('🌐 HYGRAPH_URL:', process.env.HYGRAPH_URL)
+  console.log('🔐 HYGRAPH_TOKEN:', process.env.HYGRAPH_TOKEN?.slice(0, 10) + '...')
   const response = await fetch(process.env.HYGRAPH_URL!, {
     method: 'POST',
     headers: {
@@ -20,15 +16,14 @@ export const fetchHygraphQuery = async <T>(
     next: {
       revalidate,
     },
-    body: JSON.stringify({ query }),
+    body: JSON.stringify({
+      query,
+    }),
   })
-
-  console.log('STATUS:', response.status)
-
+  console.log('📡 STATUS:', response.status)
   const json = await response.json()
-
   if (!json || !json.data) {
-    console.error('Erro ao buscar dados da Hygraph:', json.errors || json)
+    console.error('❌ Erro ao buscar dados da Hygraph:', json.errors || json)
     throw new Error('Erro na resposta da API Hygraph')
   }
 

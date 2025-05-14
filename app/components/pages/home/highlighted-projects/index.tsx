@@ -1,13 +1,13 @@
-import { HorizontalDivider } from "@/app/components/divider/horizontal";
-import { SectionTitle } from "@/app/components/section-title";
-import { ProjectCard } from "./project-card";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { Link } from "@/app/components/link";
-import { Project } from "@/app/types/projects";
+import { HorizontalDivider } from '@/app/components/divider/horizontal'
+import { SectionTitle } from '@/app/components/section-title'
+import { ProjectCard } from './project-card'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { Link } from '@/app/components/link'
+import type { HighlightedProject } from '@/app/types/projects'
 
 type HighlightedProjectsProps = {
-  projects: Project[];
-};
+  projects: HighlightedProject[]
+}
 
 export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
   return (
@@ -31,5 +31,5 @@ export const HighlightedProjects = ({ projects }: HighlightedProjectsProps) => {
         </p>
       </div>
     </section>
-  );
-};
+  )
+}

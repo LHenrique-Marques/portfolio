@@ -11,7 +11,7 @@ export const metadata = {
 const getPageData = async (): Promise<HomeOnlyData> => {
   const query = `
     query PageInfoQuery {
-      page(where: { slug: "home" }) {
+      page(where: {slug: "home"}) {
         introduction {
           raw
         }
@@ -36,26 +36,22 @@ const getPageData = async (): Promise<HomeOnlyData> => {
           title
           shortDescription
           technologies
-          githubUrl
-          liveProjectUrl
         }
       }
     }
   `
 
-  return fetchHygraphQuery(query, 1000 * 60 * 60 * 24) // 1 dia
+  return fetchHygraphQuery(
+    query,
+    1000 * 60 * 60 * 24, // 1 dia
+  )
 }
 
 export default async function Home() {
   const data = await getPageData()
 
   if (!data || !data.page) {
-    return (
-      <p>
-        Erro ao carregar dados. Verifique o slug &quot;home&quot; e se os campos
-        foram publicados.
-      </p>
-    )
+    return <p>Erro ao carregar dados. Verifique o slug "home" e se os campos foram publicados.</p>
   }
 
   const { page: pageData } = data

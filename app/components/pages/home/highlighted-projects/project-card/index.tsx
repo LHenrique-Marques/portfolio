@@ -1,16 +1,16 @@
-"use client";
+'use client'
 
-import { Link } from "@/app/components/link";
-import { TechBadge } from "@/app/components/tech-badge";
-import Image from "next/image";
-import { HiArrowNarrowRight } from "react-icons/hi";
-import { motion } from "framer-motion";
-import { Project } from "@/app/types/projects";
-import { fadeUpAnimation } from "@/app/lib/animations";
+import { Link } from '@/app/components/link'
+import { TechBadge } from '@/app/components/tech-badge'
+import Image from 'next/image'
+import { HiArrowNarrowRight } from 'react-icons/hi'
+import { motion } from 'framer-motion'
+import { fadeUpAnimation } from '@/app/lib/animations'
+import type { HighlightedProject } from '@/app/types/projects'
 
 type ProjectCardProps = {
-  project: Project;
-};
+  project: HighlightedProject
+}
 
 export const ProjectCard = ({ project }: ProjectCardProps) => {
   return (
@@ -67,7 +67,8 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
               key={`${project.title}-tech-${tech}`}
               initial={{ opacity: 0, scale: 0 }}
               whileInView={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 0.2, delay: i * 0.1 }}
+              exit={{ opacity: 0, scale: 0 }}
+              transition={{ duration: 0.2, delay: 0.5 + i * 0.1 }}
             />
           ))}
         </div>
@@ -78,5 +79,5 @@ export const ProjectCard = ({ project }: ProjectCardProps) => {
         </Link>
       </div>
     </motion.div>
-  );
-};
+  )
+}
