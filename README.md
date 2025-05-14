@@ -1,31 +1,62 @@
-## 💚 Portfolio Tutorial 2023
+🧑‍💻 Portfolio - Luis Henrique Marques Franque Flores
+Este é o repositório do meu portfólio profissional, desenvolvido com foco em performance, organização e integração com CMS (Hygraph) para facilitar a atualização dos projetos.
 
-This project is a tutorial series for my [YouTube channel](https://www.youtube.com/@GBDev) where I teach viewers how to create a modern and professional portfolio using the latest web development tools and technologies. In this series, we will be using Next.js 13, Tailwind CSS, Hygraph CMS, TypeScript, and Framer Motion to build a complete and functional portfolio website from scratch.
+🚀 Tecnologias Utilizadas
+Next.js (App Router)
 
-## 🖥 Project Images
+TypeScript
 
-<img src="https://github.com/GBDev13/portfolio-tutorial-2023/assets/71772559/341fef7a-536d-4b4e-b124-9b99be313575" align="center" />
+Tailwind CSS
 
-&nbsp;
+Hygraph CMS (GraphQL)
 
-More images [here](https://www.gbdev.me/projects/portfolio-tutorial-2023)
+Vercel – hospedagem
 
-&nbsp;
+📂 Estrutura do Projeto
+bash
+Copiar
+Editar
+.
+├── app/                 # Páginas, layouts e rotas
+│   ├── components/      # Componentes reutilizáveis
+│   ├── projects/        # Página de projetos + rota dinâmica [slug]
+│   └── api/             # API route para contato (formulário)
+├── public/              # Arquivos estáticos
+├── styles/              # Estilos globais
+├── types/               # Tipagens TypeScript
+├── utils/               # Funções utilitárias (ex: fetchHygraphQuery)
+✍️ Como atualizar os projetos
+Acesse o painel do Hygraph CMS
 
-## ⚙️ Technologies
+Edite ou adicione novos projetos
 
-- Next.js 13
-- TypeScript
-- Tailwind
-- Framer Motion
-- Hygraph CMS
+O site será atualizado automaticamente após o período de revalidação ou via rebuild manual/deploy (Vercel)
 
-&nbsp;
+🛠️ Rodando localmente
+bash
+Copiar
+Editar
+# Instale as dependências
+yarn install
 
-### 🔗 Project live
+# Crie um arquivo .env.local com as variáveis do Hygraph
+HYGRAPH_URL=https://...
+HYGRAPH_TOKEN=...
 
-- [Portfolio Tutorial 2023](https://portfolio-tutorial-2023.vercel.app/)
+# Rode o projeto localmente
+yarn dev
+📦 Build para produção
+bash
+Copiar
+Editar
+yarn build
+yarn start
+📬 Contato
+Se quiser entrar em contato comigo, acesse a seção "Contato" do site ou envie mensagem em:
 
-&nbsp;
+LinkedIn
 
-<p align="center">Developed with 💙 by GBDev</p>
+GitHub
+
+🌐 Deploy
+Este portfólio está hospedado na Vercel para alta performance e integração contínua.
