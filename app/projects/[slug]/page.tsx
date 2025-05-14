@@ -55,7 +55,7 @@ export default async function Project({ params: { slug } }: ProjectProps) {
       <ProjectDetails project={project} />
       {Array.isArray(project.section) && (
         <ProjectSections sections={project.section} />
-        )}
+      )}
     </>
   )
 }
