@@ -34,7 +34,6 @@ Vercel – hospedagem
 bash
 Copiar
 Editar
->>>>>>> e25dfb2d92fe5644220a8fff0da1e0e11f69736d
 .
 ├── app/                 # Páginas, layouts e rotas
 │   ├── components/      # Componentes reutilizáveis
@@ -48,11 +47,9 @@ Editar
 ```
 
 ## ✍️ Como atualizar os projetos
-
 1. Acesse o painel do [Hygraph CMS](https://hygraph.com/)
 2. Edite ou adicione novos projetos
 3. O site será atualizado automaticamente após o período de revalidação ou via rebuild manual/deploy (Vercel)
-
 ## 🛠️ Rodando localmente
 
 ```bash
