@@ -22,10 +22,7 @@ export const WorkExperienceSection = ({ experiences }: WorkExperienceProps) => {
 
       <div className="flex flex-col gap-4">
         {experiences?.map((experience) => (
-          <ExperienceItem
-            key={experience.company}
-            experience={experience}
-          />
+          <ExperienceItem key={experience.company} experience={experience} />
         ))}
       </div>
     </section>

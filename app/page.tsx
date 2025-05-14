@@ -56,7 +56,9 @@ const getExperiences = async (): Promise<WorkExperience[]> => {
       }
     }
   `
-  const { experiences } = await fetchHygraphQuery<{ experiences: WorkExperience[] }>(experiencesQuery)
+  const { experiences } = await fetchHygraphQuery<{
+    experiences: WorkExperience[]
+  }>(experiencesQuery)
   return experiences
 }
 export default async function Home() {
