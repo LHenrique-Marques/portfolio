@@ -18,9 +18,13 @@ export type ProjectSection = {
 };
 
 export type Project = {
-  slug: string;
-  thumbnail: { url: string };
-  title: string;
-  shortDescription: string;
-  technologies: string[]; // ← simplificado
-};
+  slug: string
+  title: string
+  shortDescription: string
+  thumbnail: {
+    url: string
+  }
+  technologies: string[] 
+  githubUrl?: string
+  liveProjectUrl?: string
+}

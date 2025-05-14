@@ -36,6 +36,8 @@ const getPageData = async (): Promise<HomeOnlyData> => {
           title
           shortDescription
           technologies
+          githubUrl
+          liveProjectUrl
         }
       }
     }

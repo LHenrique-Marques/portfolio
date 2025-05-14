@@ -1,4 +1,39 @@
-import type { RichTextContent } from "@graphcms/rich-text-types";
+import type { RichTextContent } from '@graphcms/rich-text-types'
+
+export type ProjectPageData = {
+  project: {
+    title: string
+    shortDescription: string
+    description: {
+      raw: RichTextContent
+      text: string
+    }
+    slug: string
+    thumbnail: {
+      url: string
+    }
+    pageThumbnail?: {
+      url: string
+    }
+    technologies: {
+      name: string
+    }[]
+    githubUrl?: string
+    liveProjectUrl?: string
+    sections: {
+      title: string
+      image: {
+        url: string
+      }
+    }[]
+  }
+}
+
+export type ProjectsPageStaticData = {
+  projects: {
+    slug: string
+  }[]
+}
 
 export type HomePageInfo = {
   introduction: {
