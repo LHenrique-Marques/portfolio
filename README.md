@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 # 🧑‍💻 Portfolio - Luis Henrique Marques Franque Flores
 
@@ -14,6 +15,26 @@ Este é o repositório do meu portfólio profissional, desenvolvido com foco em 
 ## 📂 Estrutura do Projeto
 
 ```
+=======
+🧑‍💻 Portfolio - Luis Henrique Marques Franque Flores
+Este é o repositório do meu portfólio profissional, desenvolvido com foco em performance, organização e integração com CMS (Hygraph) para facilitar a atualização dos projetos.
+
+🚀 Tecnologias Utilizadas
+Next.js (App Router)
+
+TypeScript
+
+Tailwind CSS
+
+Hygraph CMS (GraphQL)
+
+Vercel – hospedagem
+
+📂 Estrutura do Projeto
+bash
+Copiar
+Editar
+>>>>>>> e25dfb2d92fe5644220a8fff0da1e0e11f69736d
 .
 ├── app/                 # Páginas, layouts e rotas
 │   ├── components/      # Componentes reutilizáveis
@@ -23,6 +44,7 @@ Este é o repositório do meu portfólio profissional, desenvolvido com foco em 
 ├── styles/              # Estilos globais
 ├── types/               # Tipagens TypeScript
 ├── utils/               # Funções utilitárias (ex: fetchHygraphQuery)
+<<<<<<< HEAD
 ```
 
 ## ✍️ Como atualizar os projetos
@@ -62,3 +84,40 @@ Se quiser entrar em contato comigo, acesse a seção "Contato" do site ou envie 
 ## 🌐 Deploy
 
 Este portfólio está hospedado na **[Vercel](https://portfolio-hazel-three-72.vercel.app)** para alta performance e integração contínua.
+=======
+✍️ Como atualizar os projetos
+Acesse o painel do Hygraph CMS
+
+Edite ou adicione novos projetos
+
+O site será atualizado automaticamente após o período de revalidação ou via rebuild manual/deploy (Vercel)
+
+🛠️ Rodando localmente
+bash
+Copiar
+Editar
+# Instale as dependências
+yarn install
+
+# Crie um arquivo .env.local com as variáveis do Hygraph
+HYGRAPH_URL=https://...
+HYGRAPH_TOKEN=...
+
+# Rode o projeto localmente
+yarn dev
+📦 Build para produção
+bash
+Copiar
+Editar
+yarn build
+yarn start
+📬 Contato
+Se quiser entrar em contato comigo, acesse a seção "Contato" do site ou envie mensagem em:
+
+LinkedIn
+
+GitHub
+
+🌐 Deploy
+Este portfólio está hospedado na Vercel para alta performance e integração contínua.
+>>>>>>> e25dfb2d92fe5644220a8fff0da1e0e11f69736d
