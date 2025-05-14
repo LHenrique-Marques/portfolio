@@ -120,4 +120,3 @@ GitHub
 
 🌐 Deploy
 Este portfólio está hospedado na Vercel para alta performance e integração contínua.
->>>>>>> e25dfb2d92fe5644220a8fff0da1e0e11f69736d
