@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # 🧑‍💻 Portfolio - Luis Henrique Marques Franque Flores
 
 Este é o repositório do meu portfólio profissional, desenvolvido com foco em performance, organização e integração com CMS (Hygraph) para facilitar a atualização dos projetos.
@@ -34,7 +32,6 @@ Vercel – hospedagem
 bash
 Copiar
 Editar
->>>>>>> e25dfb2d92fe5644220a8fff0da1e0e11f69736d
 .
 ├── app/                 # Páginas, layouts e rotas
 │   ├── components/      # Componentes reutilizáveis
@@ -48,11 +45,9 @@ Editar
 ```
 
 ## ✍️ Como atualizar os projetos
-
 1. Acesse o painel do [Hygraph CMS](https://hygraph.com/)
 2. Edite ou adicione novos projetos
 3. O site será atualizado automaticamente após o período de revalidação ou via rebuild manual/deploy (Vercel)
-
 ## 🛠️ Rodando localmente
 
 ```bash
@@ -120,4 +115,3 @@ GitHub
 
 🌐 Deploy
 Este portfólio está hospedado na Vercel para alta performance e integração contínua.
->>>>>>> e25dfb2d92fe5644220a8fff0da1e0e11f69736d
