@@ -13,7 +13,7 @@ export const fetchHygraphQuery = async <T>(
       }),
     },
     next: {
-      revalidate,
+      revalidate: process.env.NODE_ENV === 'development' ? 0 : revalidate,
     },
     body: JSON.stringify({
       query,
