@@ -13,37 +13,36 @@ type ProjectProps = {
 
 const getProjectDetails = async (slug: string): Promise<ProjectPageData> => {
   const query = `
-  query ProjectQuery() {
-    project(where: {slug: "${slug}"}) {
-      pageThumbnail {
-        url
-      }
-      thumbnail {
-        url
-      }
-      sections {
-        title
-        image {
+    query ProjectQuery($slug: String!) {
+      project(where: {slug: $slug}) {
+        pageThumbnail {
           url
         }
+        thumbnail {
+          url
+        }
+        sections {
+          title
+          image {
+            url
+          }
+        }
+        title
+        shortDescription
+        description {
+          raw
+          text
+        }
+        technologies
+        liveProjectUrl
+        githubUrl
       }
-      title
-      shortDescription
-      description {
-        raw
-        text
-      }
-      technologies {
-        name
-      }
-      liveProjectUrl
-      githubUrl
     }
-  }
   `
-  const data = fetchHygraphQuery<ProjectPageData>(
+  const data = await fetchHygraphQuery<ProjectPageData>(
     query,
-    1000 * 60 * 60 * 24, // 1 day
+    { slug },
+    1000 * 60 * 60 * 24,
   )
 
   return data
@@ -57,22 +56,26 @@ export default async function Project({ params: { slug } }: ProjectProps) {
   return (
     <>
       <ProjectDetails project={project} />
-      <ProjectSections sections={project.sections} />
+      {Array.isArray(project.sections) && (
+        <ProjectSections sections={project.sections} />
+      )}
     </>
   )
 }
 
 export async function generateStaticParams() {
   const query = `
-    query ProjectsSlugsQuery() {
-      projects(first: 100) {
+    query {
+      projects {
         slug
       }
     }
   `
   const { projects } = await fetchHygraphQuery<ProjectsPageStaticData>(query)
 
-  return projects
+  return projects.map((project) => ({
+    slug: project.slug,
+  }))
 }
 
 export async function generateMetadata({

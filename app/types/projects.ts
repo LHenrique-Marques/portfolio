@@ -2,7 +2,7 @@ import type { RichTextContent } from '@graphcms/rich-text-types'
 
 export type HighlightedProject = {
   slug: string
-  thumbnail:{
+  thumbnail: {
     url: string
   }
   title: string
@@ -39,11 +39,9 @@ export type Project = {
     text: string
   }
   thumbnail: { url: string }
-  pageThumbnail :{url: string}
+  pageThumbnail: { url: string }
   technologies: { name: string }[]
   githubUrl?: string
   liveProjectUrl?: string
   sections: ProjectSection[]
-
 }
-

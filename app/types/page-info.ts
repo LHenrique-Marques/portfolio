@@ -1,4 +1,15 @@
 import type { RichTextContent } from '@graphcms/rich-text-types'
+import type { Project } from './projects'
+
+export type ProjectPageData = {
+  project: Project
+}
+export type ProjectsPageStaticData = {
+  projectsPage: {
+    pageTitle: string
+  }
+  projects: Project[]
+}
 
 export type HomePageInfo = {
   introduction: {
