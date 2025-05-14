@@ -52,13 +52,20 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
             <div className="text-2xl text-gray-600 flex items-center h-20 gap-3">
               {homeInfo.socials.map((contact, i) => (
                 <a
-                  href={contact?.url ?? 'https://http.cat/404'}
-                  key={`contact-${i}`}
+                  key={i}
+                  href={contact.url ?? 'https://http.cat/404'}
                   target="_blank"
-                  className="hover:text-gray-100 transition-colors"
                   rel="noreferrer"
+                  className="w-6 h-6 border border-white flex items-center justify-center hover:text-white transition-colors"
+                  aria-label={`Link para ${contact.url}`}
                 >
-                  <CMSIcon icon={contact.iconSvg} />
+                  {contact.iconSvg ? (
+                    <span
+                      dangerouslySetInnerHTML={{ __html: contact.iconSvg }}
+                    />
+                  ) : (
+                    <span>❌</span>
+                  )}
                 </a>
               ))}
             </div>
