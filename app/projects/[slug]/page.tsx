@@ -90,7 +90,7 @@ export async function generateMetadata({
     openGraph: {
       images: [
         {
-          url: project.thumbnail.url,
+          url: project.thumbnail?.url ?? 'https://http.cat/404',
           width: 1200,
           height: 630,
         },
