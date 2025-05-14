@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 # 🧑‍💻 Portfolio - Luis Henrique Marques Franque Flores
 
 Este é o repositório do meu portfólio profissional, desenvolvido com foco em performance, organização e integração com CMS (Hygraph) para facilitar a atualização dos projetos.
