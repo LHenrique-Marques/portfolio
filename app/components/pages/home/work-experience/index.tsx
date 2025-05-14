@@ -6,7 +6,7 @@ type WorkExperienceProps = {
   experiences: IWorkExperience[]
 }
 
-export const WorkExperience = ({ experiences }: WorkExperienceProps) => {
+export const WorkExperienceSection = ({ experiences }: WorkExperienceProps) => {
   return (
     <section className="container py-16 flex gap-10 md:gap-4 lg:gap-16 flex-col md:flex-row">
       <div className="max-w-[420px]">
@@ -23,7 +23,7 @@ export const WorkExperience = ({ experiences }: WorkExperienceProps) => {
       <div className="flex flex-col gap-4">
         {experiences?.map((experience) => (
           <ExperienceItem
-            key={experience.companyName}
+            key={experience.company}
             experience={experience}
           />
         ))}
