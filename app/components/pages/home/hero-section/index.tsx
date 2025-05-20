@@ -22,7 +22,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
   }
 
   return (
-    <section className="relative w-full overflow-hidden py-20 lg:h-[755px]">
+    <section className="relative w-full overflow-hidden py-20 pt-32 lg:h-[755px]">
       {/* Background que ocupa a tela toda */}
       <div className="absolute inset-0 bg-hero-image bg-cover bg-center bg-no-repeat z-0" />
 
