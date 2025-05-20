@@ -20,15 +20,17 @@ export default async function CertificadosPage() {
         }
     }
   `
-  const { certifications: pageData } = await fetchHygraphQuery<HomeOnlyData>(query)
+  const { certifications: pageData } = await fetchHygraphQuery<HomeOnlyData>(
+    query,
+  )
 
   return (
     <section className="container w-full py-10 pt-32">
       <div className="flex flex-col items-center">
-        <SectionTitle 
-          subtitle="../certificados" 
-          title="Todos os Certificados" 
-          className="text-center [&>h3]:text-4xl" 
+        <SectionTitle
+          subtitle="../certificados"
+          title="Todos os Certificados"
+          className="text-center [&>h3]:text-4xl"
         />
         <CertificadosContent certifications={pageData} />
       </div>

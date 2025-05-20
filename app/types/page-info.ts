@@ -55,4 +55,3 @@ export type HomeOnlyData = {
     certificateUrl: string
   }[]
 }
-

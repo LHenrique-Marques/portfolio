@@ -19,13 +19,13 @@ interface CertificadosSectionProps {
 
 export default function CertificadosSection({
   certifications = [],
-  }: CertificadosSectionProps) {
+}: CertificadosSectionProps) {
   return (
     <section className="w-full">
       <SectionTitle subtitle="../certificados" title="Certificados" />
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mt-10">
-        {certifications.map(cert => (
+        {certifications.map((cert) => (
           <div
             key={cert.id}
             className="flex flex-col items-center text-center justify-between"
