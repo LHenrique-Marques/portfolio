@@ -8,9 +8,11 @@ import { motion } from 'framer-motion'
 import { HomePageInfo } from '@/app/types/page-info'
 import { RichText } from '@/app/components/rich-text'
 import { techBadgeAnimation } from '@/app/lib/animations'
+
 type HeroSectionProps = {
   homeInfo: HomePageInfo
 }
+
 export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
   const handleContact = () => {
     const contactSection = document.querySelector('#contact')
@@ -18,9 +20,14 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
       contactSection.scrollIntoView({ behavior: 'smooth' })
     }
   }
+
   return (
-    <section className="w-full lg:h-[755px] bg-hero-image bg-cover bg-center bg-no-repeat flex flex-col justify-end pb-10 sm:pb-32 py-32 lg:pb-[110px]">
-      <div className="container flex items-start justify-between flex-col-reverse lg:flex-row">
+    <section className="relative w-full overflow-hidden py-20 lg:h-[755px]">
+      {/* Background que ocupa a tela toda */}
+      <div className="absolute inset-0 bg-hero-image bg-cover bg-center bg-no-repeat z-0" />
+
+      {/* Conteúdo centralizado */}
+      <div className="container relative z-10 flex items-start justify-between flex-col-reverse lg:flex-row">
         <motion.div
           className="w-full lg:max-w-[530px]"
           initial={{ opacity: 0, x: -100 }}
@@ -71,6 +78,7 @@ export const HeroSection = ({ homeInfo }: HeroSectionProps) => {
             </div>
           </div>
         </motion.div>
+
         <motion.div
           initial={{ opacity: 0, y: 200, scale: 0.5 }}
           whileInView={{ opacity: 1, y: 0, scale: 1 }}

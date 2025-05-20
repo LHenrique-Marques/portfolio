@@ -7,11 +7,11 @@
     @apply bg-gray-900 text-gray-100;
   }
 }
-
-.container {
-  @apply mx-auto w-full max-w-[1200px] px-6;
+@layer utilities {
+  .container {
+    @apply mx-auto w-full max-w-[1200px] px-6;
+  }
 }
-
 *::-webkit-scrollbar {
   width: 8px;
 }

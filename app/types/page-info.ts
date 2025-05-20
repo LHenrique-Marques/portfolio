@@ -46,4 +46,13 @@ export type HomePageInfo = {
 }
 export type HomeOnlyData = {
   page: HomePageInfo
+  certifications: {
+    id: string
+    title: string
+    image: {
+      url: string
+    }
+    certificateUrl: string
+  }[]
 }
+

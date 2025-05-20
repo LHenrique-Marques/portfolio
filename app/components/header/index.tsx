@@ -14,6 +14,10 @@ const NAV_ITEMS = [
     label: 'Projetos',
     href: '/projects',
   },
+  {
+    label: 'Certificados',
+    href: '/certificados',
+  },
 ]
 
 export const Header = () => {

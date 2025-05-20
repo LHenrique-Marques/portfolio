@@ -13,7 +13,7 @@ export const metadata = {
   ),
   title: {
     default: 'Home',
-    template: '%s | GB Dev',
+    template: '%s | Henrique',
   },
   icons: [
     {

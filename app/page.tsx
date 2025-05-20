@@ -5,43 +5,55 @@ import { WorkExperienceSection } from './components/pages/home/work-experience'
 import { WorkExperience } from './types/work-experience'
 import { HomeOnlyData } from './types/page-info'
 import { fetchHygraphQuery } from './utils/fetch-hygraph-query'
+import CertificadosSection from './components/pages/home/certificados-section/certificados-section'
+
 export const metadata = {
-  title: 'Home',
+  title: 'Henrique Marques',
 }
+
 const getPageData = async (): Promise<HomeOnlyData> => {
   const query = `
-    query PageInfoQuery {
-      page(where: {slug: "home"}) {
-        introduction {
-          raw
+  query PageInfoQuery {
+    page(where: {slug: "home"}) {
+      introduction {
+        raw
+      }
+      technologies
+      profilePicture {
+        url
+      }
+      socials {
+        url
+        iconSvg
+      }
+      knownTechs {
+        iconSvg
+        name
+        startDate
+      }
+      highlightProjects {
+        slug
+        thumbnail {
+          url
         }
+        title
+        shortDescription
         technologies
-        profilePicture {
-          url
-        }
-        socials {
-          url
-          iconSvg
-        }
-        knownTechs {
-          iconSvg
-          name
-          startDate
-        }
-        highlightProjects {
-          slug
-          thumbnail {
-            url
-          }
-          title
-          shortDescription
-          technologies
-        }
       }
     }
-  `
+    certifications(first: 3, where: { highlight: true }) {
+      id
+      title
+      image {
+        url
+      }
+      certificateUrl
+    }
+  }
+`
   return fetchHygraphQuery(query, undefined, 1000 * 60 * 60 * 24)
 }
+
 const getExperiences = async (): Promise<WorkExperience[]> => {
   const experiencesQuery = `
     query {
@@ -59,8 +71,10 @@ const getExperiences = async (): Promise<WorkExperience[]> => {
   const { experiences } = await fetchHygraphQuery<{
     experiences: WorkExperience[]
   }>(experiencesQuery)
+
   return experiences
 }
+
 export default async function Home() {
   const data = await getPageData()
   const experiences = await getExperiences()
@@ -73,13 +87,21 @@ export default async function Home() {
       </p>
     )
   }
+
   const { page: pageData } = data
+
   return (
     <>
+      {/* HERO FORA da container para o background ocupar 100% */}
       <HeroSection homeInfo={pageData} />
-      <KnownTechs techs={pageData.knownTechs} />
-      <WorkExperienceSection experiences={experiences} />
-      <HighlightedProjects projects={pageData.highlightProjects} />
+
+      {/* As demais seções alinhadas na container */}
+      <div className="container flex flex-col gap-16">
+        <KnownTechs techs={pageData.knownTechs} />
+        <WorkExperienceSection experiences={experiences} />
+        <CertificadosSection certifications={data.certifications} />
+        <HighlightedProjects projects={pageData.highlightProjects} />
+      </div>
     </>
   )
 }
