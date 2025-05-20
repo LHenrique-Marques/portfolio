@@ -6,7 +6,6 @@ import { WorkExperience } from './types/work-experience'
 import { HomeOnlyData } from './types/page-info'
 import { fetchHygraphQuery } from './utils/fetch-hygraph-query'
 import CertificadosSection from './components/pages/home/certificados-section/certificados-section'
-
 export const metadata = {
   title: 'Henrique Marques',
 }
